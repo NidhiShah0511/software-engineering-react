@@ -152,5 +152,4 @@ describe('findAllTuits', () => {
           await deleteTuit(tuit._id);
       })
   });
-
 });

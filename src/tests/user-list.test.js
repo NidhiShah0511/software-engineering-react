@@ -1,3 +1,4 @@
+
 import {UserList} from "../components/profile/user-list";
 import {screen, render} from "@testing-library/react";
 import {HashRouter} from "react-router-dom";
@@ -45,3 +46,4 @@ test('user list renders mocked', async () => {
   const user = screen.getByText(/ellen_ripley/i);
   expect(user).toBeInTheDocument();
 });
+
