@@ -35,5 +35,4 @@ const Tuit = ({tuit, deleteTuit}) => {
     </li>
   );
 }
-
 export default Tuit;
