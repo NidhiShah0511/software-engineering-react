@@ -9,7 +9,7 @@ export const createUser = (user) =>
   axios.post(`${USERS_API}`, user)
     .then(response => response.data);
 
-export const findAllUsers = () =>
+export const findAllUsers = () => 
   axios.get(USERS_API)
     .then(response => response.data);
 
