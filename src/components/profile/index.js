@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import MyTuits from "./my-tuits";
 import {HashRouter, Link, Route, Routes, useNavigate, useLocation} from "react-router-dom";
 import * as service from "../../services/auth-service"
+import MyLikes from "./my-likes";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -82,7 +83,11 @@ const Profile = () => {
                     className={`nav-link ${location.pathname.indexOf('media') >= 0 ? 'active':''}`}>
                 Media</Link>
             </li>
-
+            <li className="nav-item">
+              <Link to="/profile/mylikes"
+                    className={`nav-link ${location.pathname.indexOf('my-likes') >= 0 ? 'active':''}`}>
+                Likes</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -90,7 +95,8 @@ const Profile = () => {
         <Route path="/mytuits"
                element={<MyTuits/>}/>
 
-
+        <Route path="/mylikes"
+               element={<MyLikes/>}/>
 
       </Routes>
 
