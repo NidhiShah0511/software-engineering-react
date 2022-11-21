@@ -13,10 +13,12 @@ const Home = () => {
   const findTuits = () => {
     if(uid) {
       return service.findTuitByUser(uid)
-        .then(tuits => setTuits(tuits))
+        .then(tuits => {setTuits(tuits);
+      })
     } else {
       return service.findAllTuits()
-        .then(tuits => setTuits(tuits))
+        .then(tuits => {setTuits(tuits);
+        })
     }
   }
   useEffect(() => {
