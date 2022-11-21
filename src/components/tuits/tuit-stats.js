@@ -15,10 +15,36 @@ export default class TuitStats extends React.Component {
           <i className="far fa-retweet me-1"></i>
           {this.props.tuit.stats && this.props.tuit.stats.retuits}
         </div>
+
         <div className="col">
-          <i className="far fa-heart me-1"></i>
-          {this.props.tuit.stats && this.props.tuit.stats.likes}
+            <span onClick={() => this.props.likeTuit(this.props.tuit)}>
+                {
+                    this.props.tuit.stats && this.props.tuit.stats.likes > 0 &&
+                    <i className="fa fa-thumbs-up me-1" style={{color: 'red'}}></i>
+                }
+                {
+                    this.props.tuit.stats && this.props.tuit.stats.likes <= 0 &&
+                    <i className="far fa-thumbs-up me-1"></i>
+                }
+                
+                {this.props.tuit.stats && this.props.tuit.stats.likes}
+            </span>
         </div>
+
+        <div className="col">
+         <span onClick={() => this.props.dislikeTuit(this.props.tuit)}>
+              {
+                  this.props.tuit.stats && this.props.tuit.stats.dislikes > 0 &&
+                  <i className="fa fa-thumbs-down me-1" style={{color: 'blue'}}></i>
+              }
+              {
+                  this.props.tuit.stats && this.props.tuit.stats.dislikes <= 0 &&
+                  <i className="far fa-thumbs-down me-1"></i>
+              }
+              {this.props.tuit.stats && this.props.tuit.stats.dislikes}
+          </span>
+        </div>
+
         <div className="col">
           <i className="far fa-inbox-out"></i>
         </div>
